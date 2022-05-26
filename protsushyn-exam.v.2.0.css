@@ -169,9 +169,7 @@ section:nth-of-type(1) .btn-dark {
     background-color: #C96408;
 }
 
-.card-e-commerce, 
-.card-portfolio, 
-.card-marketing {
+.card-idea {
     display: flex;
     width: 385px;
     height: 287px;
@@ -181,11 +179,7 @@ section:nth-of-type(1) .btn-dark {
     justify-content: center;
 }
 
-.card-e-commerce__web-icon1, 
-.card-e-commerce__web-icon2, 
-.card-e-commerce-img, 
-.card-portfolio-img, 
-.card-marketing-img {
+.card-idea__img {
     width: 66px;
     height: 66px;
     margin: 40px 0 auto;
