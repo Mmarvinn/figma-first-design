@@ -563,7 +563,6 @@ section:nth-of-type(3) .btn-blue {
     .website img {
         display: block;
         width: 100%;
-        opacity: 0.8;
     }
 
     .website {
@@ -584,6 +583,16 @@ section:nth-of-type(3) .btn-blue {
     .website h2 {
         font-size: 2.0rem;
         top: 40%;
+    }
+} 
+
+@media screen and (max-width: 510px) {
+    .website h2 {
+        font-size: 1.6rem;
+    }
+
+    .website p {
+        font-size: 0.85rem;
     }
 } 
 
@@ -626,4 +635,23 @@ footer p:nth-of-type(2) {
 
 .social img {
     padding: 10px;
+}
+
+@media screen and (max-width: 550px) {
+    footer {
+        flex-wrap: wrap;
+    }
+    
+    .social {
+        margin: 10px auto;
+    }
+
+    footer p:nth-of-type(1),
+    footer p:nth-of-type(2) {
+        text-align: center;
+    }
+    
+    .social img {
+        padding: 10px;
+    }
 }
