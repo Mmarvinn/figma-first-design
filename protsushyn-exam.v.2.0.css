@@ -8,7 +8,8 @@ body {
     background-color: black;
     margin: 0 auto;
     color: white;
-    width: 90%;
+    width: 99vw;
+    padding: 70px;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -66,6 +67,8 @@ p {
 .header ul {
     display: flex;
     padding: 0;
+    justify-self: end;
+    grid-column: 4;
 }
 
 .header ul li {
@@ -78,43 +81,48 @@ p {
     padding: 7px;
 }
 
-.header div {
-    width: 170px;
-    border: 2px solid white;
-    border-radius: 7px;
-    text-align: center;
-    margin: auto;
-    padding: 10px 0;
-}
-
-.header {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    margin: 30px auto;
-}
-
-.header img {
-    grid-column: auto / span 2;
-}
-
 .header a {
     color: white;
 }
 
+.header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    margin: 30px auto;
+    align-items: center;
+}
+
 .join-clubwebers {
     padding: 10px 23px;
+    width: 170px;
+    justify-self: end;
+    grid-column: 5;
+}
+
+@media screen and (max-width: 700px) {
+    .header {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        margin: 30px auto;
+        align-items: center;
+    }
+
+    .join-clubwebers, .header ul {
+        justify-self: center;
+        grid-column: auto;
+    }
 }
 
 /*Section 1 style (h1, p, buttons)*/
 
-main section:nth-of-type(1) .wrapper {
+section:nth-of-type(1) .wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 40px;
 }
 
 @media screen and (max-width: 600px) {
-    main section:nth-of-type(1) .wrapper {
+    section:nth-of-type(1) .wrapper {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         grid-gap: 25px;
@@ -137,24 +145,31 @@ section:nth-of-type(1) .btn-dark {
     }
 }
 
+section:nth-of-type(1) h1 a {
+    color: rgb(104, 104, 252);
+}
+
 /*image style, without section*/
 
 .laptop {
     display: block;
     margin: 3% auto;
-    width: 70%;
+    width: 100%;
     border-radius: 10px;
 }
 
 /*Section 2 style*/
 
+#margin-tb-50px {
+    margin: 50px auto;
+}
+
 .three-image {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     justify-items: center;
-    align-items: end;
     margin: 0 auto;
-    grid-gap: 20px;
+    grid-gap: 25px;
 }
 
 .card-portfolio {
@@ -171,7 +186,7 @@ section:nth-of-type(1) .btn-dark {
 
 .card-idea {
     display: flex;
-    width: 385px;
+    width: 100%;
     height: 287px;
     border-radius: 5px;
     z-index: -1;
@@ -222,7 +237,7 @@ section:nth-of-type(1) .btn-dark {
     background-color: #1A1919;
     height: 350px;
     width: 1210px;
-    margin: 30px auto;
+    margin: 70px auto;
     border-radius: 5px;
 }
 
@@ -370,7 +385,7 @@ section:nth-of-type(3) p {
 
 .developers {
     display: grid;
-    grid-template-columns: repeat(auto-fill, 290px);
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
     grid-gap: 15px;
     justify-items: center;
     margin: 0 auto;
@@ -435,57 +450,6 @@ section:nth-of-type(3) p {
     bottom: 15px;
     right: 15px;
 }
-  
-  /* @media screen and (max-width: 600px) {
-    .developers {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      grid-gap: 15px;
-      justify-items: center;
-      margin: 0 auto;
-    }
-  
-    .blur {
-      position: absolute;
-      background-color: rgba(9, 7, 7, 0.4);
-      height: 130px;
-      backdrop-filter: blur(25px);
-      bottom: 4px;
-      left: 0px;
-      border-radius: 0 0 5px 5px;
-    }
-  
-    .developers .card-dev h5 {
-      position: absolute;
-      z-index: 1;
-      margin: 0 auto;
-      bottom: 70px;
-      left: 135px;
-      font-size: 1.5rem;
-    }
-  
-    .card-dev p {
-      position: absolute;
-      bottom: 20px;
-      left: 135px;
-      font-size: 1.2rem;
-    }
-    .card-dev img:nth-of-type(3) {
-      position: absolute;
-      width: 18%;
-      z-index: 1;
-      bottom: 28px;
-      left: 28px;
-    }
-  
-    .card-dev .com {
-      position: absolute;
-      width: 12%;
-      z-index: 1;
-      bottom: 20px;
-      right: 20px;
-    }
-  } */
 
 section:nth-of-type(3) .btn-blue {
     display: block;
@@ -498,7 +462,7 @@ section:nth-of-type(3) .btn-blue {
 
 .comments {
     display: grid;
-    grid-template-columns: repeat(auto-fill, 390px);
+    grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
     grid-gap: 15px;
     margin: 70px auto;
 }
@@ -507,8 +471,7 @@ section:nth-of-type(3) .btn-blue {
     display: flex;
     flex-wrap: wrap;
     position: relative;
-    width: 385px;
-    height: 150px;
+    height: 160px;
     background-color: #1A1919;
     border-radius: 5px;
 }
@@ -517,16 +480,15 @@ section:nth-of-type(3) .btn-blue {
     margin: 0;
     font-size: 0.9rem;
     line-height: 1.5;
-    padding: 15px 20px 0px 20px;
+    padding: 10px 20px 0px 20px;
     text-align: left;
-    height: 106px;
-    width: 385px;
 }
 
 .comment-card img {
     width: 35px;
     height: 35px;
     margin: 0 20px 10px 20px;
+    align-self: center;
 }
 
 .comment-card h5 {
@@ -537,44 +499,78 @@ section:nth-of-type(3) .btn-blue {
 .website img {
     display: block;
     margin: 0;
-    width: 1210px;
+    width: 100%;
     border-radius: 5px;
-    position: absolute;
-    top: 0px;
-    left: 0px;
     opacity: 0.8;
+    overflow: hidden;
+    z-index: -1;
 }
 
 .website {
     position: relative;
-    display: flex;
-    flex-wrap: wrap;
+    display: block;
     margin: 70px auto;
-    width: 1210px;
-    height: 500px;
-    align-content: center;
+    width: 100%;
+    height: 100%;
 }
 
 .website h2, .website p {
-    z-index: 1;
+    position: absolute;
     margin: 10px 70px;
     text-align: left;
     width: 100%;
 }
 
-@media screen and (max-width: 600px) {
+.website h2 {
+    top: 35%;
+}
+
+.website p {
+    top: 55%;
+}
+
+@media screen and (max-width: 1250px) {
+    .website h2 {
+        top: 25%;
+    }
+    
+    .website p {
+        top: 50%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .website h2 {
+        top: 15%;
+    }
+    
+    .website p {
+        top: 50%;
+    }
+}
+
+@media screen and (max-width: 770px) {
+    .website h2 {
+        top: 5%;
+    }
+    
+    .website p {
+        top: 60%;
+    }
+}
+
+@media screen and (max-width: 670px) {
     .website img {
         display: block;
-        width: 430px;
+        width: 100%;
         opacity: 0.8;
     }
 
     .website {
         position: relative;
-        display: flex;
-        flex-wrap: wrap;
+        display: block;
         margin: 70px auto;
-        width: 430px;
+        width: 100%;
         align-content: center;
     }
 
@@ -587,6 +583,7 @@ section:nth-of-type(3) .btn-blue {
 
     .website h2 {
         font-size: 2.0rem;
+        top: 40%;
     }
 } 
 
